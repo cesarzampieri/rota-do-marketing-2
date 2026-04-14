@@ -3,8 +3,8 @@ import { ArrowRight, CheckCircle, MessageCircle, MapPin, TrendingUp, Users } fro
 import { useState } from "react";
 
 /**
- * Design: Minimalismo Corporativo Moderno
- * Paleta: Branco puro, cinza escuro (#1A1A1A), azul profundo (#0052CC)
+ * Design: Moderno e Energético - rotadomarketing.com.br
+ * Paleta: Preto (#0F0F0F), Laranja (#FF6B35), Verde neon (#00DD00), Branco (#FFFFFF)
  * Tipografia: Poppins Bold (títulos) + Inter Regular (corpo)
  * Layout: Hero assimétrico, seções alternadas, espaçamento generoso
  * Animações: Fade-in ao scroll, hover suave em buttons
@@ -51,16 +51,19 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
+      <nav className="sticky top-0 z-50 bg-background border-b border-border shadow-sm">
         <div className="container flex items-center justify-between py-4">
-          <div className="text-2xl font-bold text-primary">Rota do Marketing</div>
+          <div className="text-2xl font-bold">
+            <span className="text-foreground">Rota do</span>
+            <span className="text-primary">Marketing</span>
+          </div>
           <a
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
+            className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity duration-200 font-medium"
           >
             <MessageCircle size={18} />
             Fale Conosco
@@ -82,14 +85,14 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full sm:w-auto bg-primary hover:bg-blue-700 text-white px-8 py-6 text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-lg">
+                  <Button className="w-full sm:w-auto bg-primary hover:opacity-90 text-white px-8 py-6 text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-lg">
                     Começar 7 Dias Grátis
                     <ArrowRight className="ml-2" size={18} />
                   </Button>
                 </a>
                 <Button
                   variant="outline"
-                  className="w-full sm:w-auto px-8 py-6 text-base font-semibold border-2 border-border hover:bg-secondary transition-colors duration-200"
+                  className="w-full sm:w-auto px-8 py-6 text-base font-semibold border-2 border-accent text-accent hover:bg-accent hover:text-background transition-colors duration-200"
                 >
                   Saiba Mais
                 </Button>
@@ -112,9 +115,10 @@ export default function Home() {
       <div className="border-t border-border" />
 
       {/* Services Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container">
           <div className="text-center mb-16">
+            <div className="text-sm font-semibold text-accent mb-3">O QUE FAZEMOS</div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
               Nossos Serviços
             </h2>
@@ -129,7 +133,7 @@ export default function Home() {
               return (
                 <div
                   key={service.id}
-                  className="fade-in-up bg-white border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer"
+                  className="fade-in-up bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg hover:border-accent transition-all duration-300 cursor-pointer"
                   onMouseEnter={() => setHoveredService(service.id)}
                   onMouseLeave={() => setHoveredService(null)}
                 >
@@ -152,7 +156,7 @@ export default function Home() {
                       {service.description}
                     </p>
                     <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                      <Button className="w-full bg-primary hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-200">
+                      <Button className="w-full bg-primary hover:opacity-90 text-white font-semibold rounded-lg transition-all duration-200">
                         Solicitar Informações
                       </Button>
                     </a>
@@ -168,10 +172,11 @@ export default function Home() {
       <div className="border-t border-border" />
 
       {/* Benefits Section */}
-      <section className="py-16 md:py-24 bg-secondary">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container flex justify-center">
           {/* Benefits List - Centered */}
           <div className="fade-in-up max-w-2xl w-full">
+            <div className="text-sm font-semibold text-accent mb-3 text-center">POR QUE ESCOLHER</div>
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground text-center">
               Por que escolher a Rota do Marketing?
             </h2>
@@ -187,7 +192,7 @@ export default function Home() {
 
             <div className="flex justify-center">
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                <Button className="bg-primary hover:bg-blue-700 text-white px-8 py-6 text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-lg">
+                <Button className="bg-primary hover:opacity-90 text-white px-8 py-6 text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-lg">
                   Comece Agora
                   <ArrowRight className="ml-2" size={18} />
                 </Button>
@@ -201,7 +206,7 @@ export default function Home() {
       <div className="border-t border-border" />
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center fade-in-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
@@ -213,7 +218,7 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                <Button className="w-full sm:w-auto bg-primary hover:bg-blue-700 text-white px-8 py-6 text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-lg">
+                <Button className="w-full sm:w-auto bg-primary hover:opacity-90 text-white px-8 py-6 text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-lg">
                   <MessageCircle className="mr-2" size={18} />
                   Fale Conosco no WhatsApp
                 </Button>
@@ -227,19 +232,22 @@ export default function Home() {
       <div className="border-t border-border" />
 
       {/* Footer */}
-      <footer className="py-12 bg-foreground text-white">
+      <footer className="py-12 bg-card border-t border-border">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="font-bold text-lg mb-4">Rota do Marketing</h3>
-              <p className="text-gray-300">
+              <h3 className="font-bold text-lg mb-4">
+                <span className="text-foreground">Rota do</span>
+                <span className="text-primary">Marketing</span>
+              </h3>
+              <p className="text-muted-foreground">
                 Gestão profissional de tráfego pago para impulsionar seu negócio.
               </p>
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">Serviços</h4>
-              <ul className="space-y-2 text-gray-300">
+              <h4 className="font-bold mb-4 text-foreground">Serviços</h4>
+              <ul className="space-y-2 text-muted-foreground">
                 <li>Google Ads</li>
                 <li>Meta Ads</li>
                 <li>Google Meu Negócio</li>
@@ -247,20 +255,20 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">Contato</h4>
+              <h4 className="font-bold mb-4 text-foreground">Contato</h4>
               <a
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-300 hover:text-blue-200 transition-colors"
+                className="text-primary hover:opacity-80 transition-opacity"
               >
                 WhatsApp: +55 43 98830-6859
               </a>
             </div>
           </div>
 
-          <div className="border-t border-gray-700 pt-8">
-            <p className="text-center text-gray-400 text-sm">
+          <div className="border-t border-border pt-8">
+            <p className="text-center text-muted-foreground text-sm">
               © 2026 C Zampieri Ltda. CNPJ: 13.311.957/0001-09. Todos os direitos reservados.
             </p>
           </div>
