@@ -41,6 +41,13 @@ export default function Home() {
       icon: MapPin,
       image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663333353355/RRnWHRVuodTvaUEqwadhWE/google-meu-negocio-cAmkrQtfvkRQMxi77BLeif.webp",
     },
+    {
+      id: "landing-pages",
+      title: "Criação de Landing Pages",
+      description: "Landing pages de alta conversão desenvolvidas com foco em resultados. Design profissional, otimização para SEO e velocidade garantida.",
+      icon: MessageCircle,
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663333353355/RRnWHRVuodTvaUEqwadhWE/hero-banner-XxXxXxXxXxXxXxXx.webp",
+    },
   ];
 
   const benefits = [
@@ -464,6 +471,17 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Floating WhatsApp Button */}
+      <a
+        href={WHATSAPP_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-40 w-16 h-16 bg-primary hover:opacity-90 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 animate-pulse"
+        title="Fale conosco no WhatsApp"
+      >
+        <MessageCircle size={28} className="text-white" />
+      </a>
     </div>
   );
 }
