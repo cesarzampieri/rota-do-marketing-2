@@ -139,41 +139,29 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left: Text Content */}
-            <div className="fade-in-up">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-foreground">
-                Aumente suas vendas com tráfego pago estratégico
-              </h1>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Gestão profissional de Google Ads, Meta Ads e otimização de Google Meu Negócio. Teste gratuitamente por 7 dias e veja os resultados.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full sm:w-auto bg-primary hover:opacity-90 text-white px-8 py-6 text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-lg">
-                    Começar 7 Dias Grátis
-                    <ArrowRight className="ml-2" size={18} />
-                  </Button>
-                </a>
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  <Button
-                    variant="outline"
-                    className="w-full sm:w-auto px-8 py-6 text-base font-semibold border-2 border-accent text-accent hover:bg-accent hover:text-background transition-colors duration-200"
-                  >
-                    Saiba Mais
-                  </Button>
-                </a>
-              </div>
-            </div>
-
-            {/* Right: Hero Image */}
-            <div className="relative fade-in">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663333353355/RRnWHRVuodTvaUEqwadhWE/hero-banner-iCwTYJjXn8BMdiRNEM3T42.webp"
-                alt="Dashboard de Marketing Digital"
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
+        <div className="container flex justify-center">
+          <div className="fade-in-up max-w-2xl w-full text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-foreground">
+              Aumente suas vendas com tráfego pago estratégico
+            </h1>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              Gestão profissional de Google Ads, Meta Ads e otimização de Google Meu Negócio. Teste gratuitamente por 7 dias e veja os resultados.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                <Button className="w-full sm:w-auto bg-primary hover:opacity-90 text-white px-8 py-6 text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-lg">
+                  Começar 7 Dias Grátis
+                  <ArrowRight className="ml-2" size={18} />
+                </Button>
+              </a>
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  className="w-full sm:w-auto px-8 py-6 text-base font-semibold border-2 border-accent text-accent hover:bg-accent hover:text-background transition-colors duration-200"
+                >
+                  Saiba Mais
+                </Button>
+              </a>
             </div>
           </div>
         </div>
