@@ -169,66 +169,29 @@ export default function Home() {
 
       {/* Benefits Section */}
       <section className="py-16 md:py-24 bg-secondary">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Benefits List */}
-            <div className="fade-in-up">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
-                Por que escolher a Rota do Marketing?
-              </h2>
+        <div className="container flex justify-center">
+          {/* Benefits List - Centered */}
+          <div className="fade-in-up max-w-2xl w-full">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground text-center">
+              Por que escolher a Rota do Marketing?
+            </h2>
 
-              <ul className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-4">
-                    <CheckCircle className="text-primary flex-shrink-0 mt-1" size={20} />
-                    <span className="text-lg text-foreground font-medium">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
+            <ul className="space-y-4 mb-10">
+              {benefits.map((benefit, index) => (
+                <li key={index} className="flex items-start gap-4">
+                  <CheckCircle className="text-primary flex-shrink-0 mt-1" size={20} />
+                  <span className="text-lg text-foreground font-medium">{benefit}</span>
+                </li>
+              ))}
+            </ul>
 
-              <div className="mt-10">
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-primary hover:bg-blue-700 text-white px-8 py-6 text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-lg">
-                    Comece Agora
-                    <ArrowRight className="ml-2" size={18} />
-                  </Button>
-                </a>
-              </div>
-            </div>
-
-            {/* Right: Credentials */}
-            <div className="fade-in bg-white p-8 rounded-lg border border-border shadow-sm">
-              <h3 className="text-2xl font-bold mb-6 text-foreground">Credenciais</h3>
-
-              <div className="space-y-6">
-                <div>
-                  <h4 className="font-bold text-foreground mb-2">Certificação</h4>
-                  <p className="text-muted-foreground">
-                    ✓ Google Ads Certified (Rede de Pesquisa)
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-bold text-foreground mb-2">Formação</h4>
-                  <p className="text-muted-foreground">
-                    ✓ Curso de Adriano Gianini - Especialista em Tráfego Pago
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-bold text-foreground mb-2">Alcance</h4>
-                  <p className="text-muted-foreground">
-                    ✓ Atendimento no Brasil e no exterior
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-bold text-foreground mb-2">Modelo</h4>
-                  <p className="text-muted-foreground">
-                    ✓ 7 dias de gestão gratuita para análise
-                  </p>
-                </div>
-              </div>
+            <div className="flex justify-center">
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                <Button className="bg-primary hover:bg-blue-700 text-white px-8 py-6 text-base font-semibold rounded-lg transition-all duration-200 hover:shadow-lg">
+                  Comece Agora
+                  <ArrowRight className="ml-2" size={18} />
+                </Button>
+              </a>
             </div>
           </div>
         </div>
