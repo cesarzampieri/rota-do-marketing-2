@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { ArrowRight, CheckCircle, MessageCircle, MapPin, TrendingUp, Users, Star, ChevronDown, MessageCircle as WhatsAppIcon } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
@@ -461,15 +462,21 @@ export default function Home() {
       </footer>
 
       {/* Floating WhatsApp Button */}
-      <a
-        href={WHATSAPP_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-40 w-16 h-16 bg-[#25D366] hover:bg-[#20BA5A] rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 animate-pulse"
-        title="Fale conosco no WhatsApp"
-      >
-        <WhatsAppIcon size={28} className="text-white" />
-      </a>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fixed bottom-6 right-6 z-40 w-16 h-16 bg-[#25D366] hover:bg-[#20BA5A] rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 animate-pulse"
+          >
+            <WhatsAppIcon size={28} className="text-white" />
+          </a>
+        </TooltipTrigger>
+        <TooltipContent side="left" className="bg-foreground text-background font-semibold">
+          Fale conosco!
+        </TooltipContent>
+      </Tooltip>
     </div>
   );
 }
