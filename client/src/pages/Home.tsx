@@ -90,12 +90,14 @@ export default function Home() {
                     <ArrowRight className="ml-2" size={18} />
                   </Button>
                 </a>
-                <Button
-                  variant="outline"
-                  className="w-full sm:w-auto px-8 py-6 text-base font-semibold border-2 border-accent text-accent hover:bg-accent hover:text-background transition-colors duration-200"
-                >
-                  Saiba Mais
-                </Button>
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="outline"
+                    className="w-full sm:w-auto px-8 py-6 text-base font-semibold border-2 border-accent text-accent hover:bg-accent hover:text-background transition-colors duration-200"
+                  >
+                    Saiba Mais
+                  </Button>
+                </a>
               </div>
             </div>
 
