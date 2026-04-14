@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, MessageCircle, MapPin, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, CheckCircle, MessageCircle, MapPin, TrendingUp, Users, Star, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 /**
@@ -16,6 +16,7 @@ const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponen
 
 export default function Home() {
   const [hoveredService, setHoveredService] = useState<string | null>(null);
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   const services = [
     {
@@ -48,6 +49,63 @@ export default function Home() {
     "Formação com Adriano Gianini",
     "Atendimento no Brasil e no exterior",
     "Resultados mensuráveis e transparentes",
+  ];
+
+  const testimonials = [
+    {
+      id: 1,
+      name: "João Silva",
+      role: "Empresário - Londrina, PR",
+      text: "Profissional sério e comprometido. As campanhas trouxeram resultado desde o primeiro mês e o suporte pelo WhatsApp faz toda a diferença.",
+      rating: 5,
+      initials: "JS",
+    },
+    {
+      id: 2,
+      name: "Maria Costa",
+      role: "Clínica Estética - São Paulo, SP",
+      text: "Antes eu jogava dinheiro fora em anúncios sem retorno. Com a gestão do César, finalmente consigo acompanhar o resultado de cada real investido.",
+      rating: 5,
+      initials: "MC",
+    },
+    {
+      id: 3,
+      name: "Ricardo Pereira",
+      role: "Loja Online - Curitiba, PR",
+      text: "Relatórios claros, atendimento rápido e estratégia que faz sentido para o meu negócio. Recomendo sem hesitar.",
+      rating: 5,
+      initials: "RP",
+    },
+  ];
+
+  const metrics = [
+    { label: "Anos no Digital", value: "+17" },
+    { label: "Clientes Atendidos", value: "+50" },
+    { label: "ROI Médio", value: "4.5x" },
+    { label: "Taxa de Retenção", value: "95%" },
+  ];
+
+  const faqs = [
+    {
+      id: 1,
+      question: "Como funciona o período de 7 dias grátis?",
+      answer: "Durante 7 dias, você terá acesso à gestão completa de suas campanhas. Você pode acompanhar os resultados em tempo real e decidir se deseja continuar. Sem compromisso!",
+    },
+    {
+      id: 2,
+      question: "Quanto custa o serviço após os 7 dias?",
+      answer: "O valor depende do volume de investimento em anúncios e da complexidade da estratégia. Fazemos uma análise gratuita para montar uma proposta personalizada.",
+    },
+    {
+      id: 3,
+      question: "Vocês trabalham com qual orçamento mínimo?",
+      answer: "Trabalhamos com empresas de qualquer tamanho. O orçamento mínimo recomendado é de R$ 500/mês para resultados significativos, mas podemos adaptar conforme sua realidade.",
+    },
+    {
+      id: 4,
+      question: "Quais são os resultados que posso esperar?",
+      answer: "Os resultados variam conforme o segmento e estratégia, mas nossos clientes costumam ver aumento de 30-50% em leads/vendas nos primeiros 30 dias.",
+    },
   ];
 
   return (
@@ -200,6 +258,122 @@ export default function Home() {
                 </Button>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="border-t border-border" />
+
+      {/* Metrics Section */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container">
+          <div className="text-center mb-16">
+            <div className="text-sm font-semibold text-accent mb-3">NÚMEROS QUE FALAM</div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              Resultados Comprovados
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {metrics.map((metric) => (
+              <div key={metric.label} className="fade-in-up text-center">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                  {metric.value}
+                </div>
+                <p className="text-muted-foreground font-medium">{metric.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="border-t border-border" />
+
+      {/* Testimonials Section */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container">
+          <div className="text-center mb-16">
+            <div className="text-sm font-semibold text-accent mb-3">DEPOIMENTOS</div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              O que dizem nossos clientes
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial) => (
+              <div
+                key={testimonial.id}
+                className="fade-in-up bg-card border border-border rounded-lg p-8 hover:border-accent transition-all duration-300"
+              >
+                {/* Stars */}
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                    <Star key={i} size={16} className="fill-primary text-primary" />
+                  ))}
+                </div>
+
+                {/* Text */}
+                <p className="text-muted-foreground mb-6 leading-relaxed italic">
+                  "{testimonial.text}"
+                </p>
+
+                {/* Author */}
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">
+                    {testimonial.initials}
+                  </div>
+                  <div>
+                    <p className="font-bold text-foreground">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="border-t border-border" />
+
+      {/* FAQ Section */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container">
+          <div className="text-center mb-16">
+            <div className="text-sm font-semibold text-accent mb-3">DÚVIDAS FREQUENTES</div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              Perguntas Frequentes
+            </h2>
+          </div>
+
+          <div className="max-w-2xl mx-auto space-y-4">
+            {faqs.map((faq) => (
+              <div
+                key={faq.id}
+                className="fade-in-up bg-card border border-border rounded-lg overflow-hidden hover:border-accent transition-all duration-300"
+              >
+                <button
+                  onClick={() => setExpandedFaq(expandedFaq === faq.id ? null : faq.id)}
+                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-secondary transition-colors duration-200"
+                >
+                  <span className="text-lg font-semibold text-foreground text-left">{faq.question}</span>
+                  <ChevronDown
+                    size={20}
+                    className={`text-primary flex-shrink-0 transition-transform duration-300 ${
+                      expandedFaq === faq.id ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {expandedFaq === faq.id && (
+                  <div className="px-6 py-4 border-t border-border bg-secondary">
+                    <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
