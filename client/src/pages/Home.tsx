@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, MessageCircle, MapPin, TrendingUp, Users, Star, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { Link } from "wouter";
 
 /**
  * Design: Moderno e Energético - rotadomarketing.com.br
@@ -444,6 +445,19 @@ export default function Home() {
           </div>
 
           <div className="border-t border-border pt-8">
+            <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-6">
+              <Link href="/privacy-policy">
+                <a className="text-primary hover:opacity-80 transition-opacity text-sm font-medium">
+                  Política de Privacidade
+                </a>
+              </Link>
+              <span className="text-border">•</span>
+              <Link href="/terms-of-use">
+                <a className="text-primary hover:opacity-80 transition-opacity text-sm font-medium">
+                  Termos de Uso
+                </a>
+              </Link>
+            </div>
             <p className="text-center text-muted-foreground text-sm">
               © 2026 C Zampieri Ltda. CNPJ: 13.311.957/0001-09. Todos os direitos reservados.
             </p>
