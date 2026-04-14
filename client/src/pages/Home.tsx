@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, MessageCircle, MapPin, TrendingUp, Users, Star, ChevronDown } from "lucide-react";
+import { ArrowRight, CheckCircle, MessageCircle, MapPin, TrendingUp, Users, Star, ChevronDown, MessageCircle as WhatsAppIcon } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 
@@ -465,10 +465,10 @@ export default function Home() {
         href={WHATSAPP_LINK}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-40 w-16 h-16 bg-primary hover:opacity-90 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 animate-pulse"
+        className="fixed bottom-6 right-6 z-40 w-16 h-16 bg-[#25D366] hover:bg-[#20BA5A] rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 animate-pulse"
         title="Fale conosco no WhatsApp"
       >
-        <MessageCircle size={28} className="text-white" />
+        <WhatsAppIcon size={28} className="text-white" />
       </a>
     </div>
   );
